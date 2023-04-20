@@ -32,14 +32,7 @@
           class="list-item u-flex u-main-space-between u-cross-center"
           v-for="item in todos"
           :key="item.$id">
-          <span class="text">{{ item.todo }}</span>
-          <div>
-            <span
-              class="icon-pencil"
-              aria-hidden="true"
-              :style="{ 'margin-right': space + 'em' }"></span>
-            <span class="icon-trash" aria-hidden="true"></span>
-          </div>
+          <list-todo :item="item" />
         </li>
       </ul>
     </div>
@@ -52,7 +45,7 @@ import { getTodo, create } from "~/utils";
 const name = ref("Add tooodooos");
 
 const marginTop = ref("3");
-const space = ref(1);
+// const space = ref(1);
 
 const todos = ref(null);
 
