@@ -4,6 +4,7 @@
     <span
       class="icon-pencil"
       aria-hidden="true"
+      @click.prevent="handleUpdateTodo"
       :style="{ 'margin-right': space + 'em' }"></span>
     <span
       class="icon-trash"
@@ -13,7 +14,7 @@
 </template>
 
 <script lang="ts">
-import { deleteTodo } from "~/utils";
+import { deleteTodo, updateTodo } from "~/utils";
 
 export default {
   props: ["item"],
@@ -36,6 +37,9 @@ export default {
           console.log(error);
         }
       );
+    },
+    handleUpdateTodo() {
+      console.log("working!!!");
     },
   },
 };

@@ -16,7 +16,7 @@
             <input
               class="input-text"
               type="text"
-              placeholder="add todo"
+              placeholder="add new todo"
               v-model="input.todo" />
           </div>
         </li>
