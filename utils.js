@@ -15,3 +15,6 @@ export const getTodo = databases.listDocuments(DATABASE_ID, COLLECTION_ID);
 
 export const create = (data) =>
   databases.createDocument(DATABASE_ID, COLLECTION_ID, ID.unique(), data);
+
+export const deleteTodo = (database_id, collection_id, data) =>
+  databases.deleteDocument(database_id, collection_id, data);
