@@ -1,4 +1,4 @@
-import { Client, Databases } from "appwrite";
+import { Client, Databases, ID } from "appwrite";
 
 const client = new Client();
 
@@ -12,3 +12,6 @@ const API_ENDPOINT = "https://cloud.appwrite.io/v1";
 client.setEndpoint(API_ENDPOINT).setProject(PROJECT_ID);
 
 export const getTodo = databases.listDocuments(DATABASE_ID, COLLECTION_ID);
+
+export const create = (data) =>
+  databases.createDocument(DATABASE_ID, COLLECTION_ID, ID.unique(), data);
