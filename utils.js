@@ -11,4 +11,4 @@ const API_ENDPOINT = "https://cloud.appwrite.io/v1";
 
 client.setEndpoint(API_ENDPOINT).setProject(PROJECT_ID);
 
-export const getComment = databases.listDocuments(DATABASE_ID, COLLECTION_ID);
+export const getTodo = databases.listDocuments(DATABASE_ID, COLLECTION_ID);
