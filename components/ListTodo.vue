@@ -2,11 +2,6 @@
   <span class="text">{{ item.todo }}</span>
   <div>
     <span
-      class="icon-pencil"
-      aria-hidden="true"
-      @click.prevent="handleUpdateTodo"
-      :style="{ 'margin-right': space + 'em' }"></span>
-    <span
       class="icon-trash"
       aria-hidden="true"
       @click.prevent="handleDeleteTodo"></span>
@@ -14,7 +9,7 @@
 </template>
 
 <script lang="ts">
-import { deleteTodo, updateTodo } from "~/utils";
+import { deleteTodo } from "~/utils";
 
 export default {
   props: ["item"],
