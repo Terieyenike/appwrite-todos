@@ -1,5 +1,4 @@
 import { Client, Databases, ID } from "appwrite";
-
 const client = new Client();
 
 const databases = new Databases(client);

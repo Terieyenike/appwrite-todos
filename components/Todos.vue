@@ -45,7 +45,6 @@ import { getTodo, create } from "~/utils";
 const name = ref("Add tooodooos");
 
 const marginTop = ref("3");
-// const space = ref(1);
 
 const todos = ref(null);
 
