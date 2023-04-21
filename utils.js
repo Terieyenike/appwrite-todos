@@ -17,6 +17,3 @@ export const create = (data) =>
 
 export const deleteTodo = (database_id, collection_id, document_id) =>
   databases.deleteDocument(database_id, collection_id, document_id);
-
-export const updateTodo = (database_id, collection_id, document_id) =>
-  databases.updateDocument(database_id, collection_id, document_id);
