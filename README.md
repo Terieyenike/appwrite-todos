@@ -27,13 +27,13 @@ Try the demo [live](#)
 Clone the project
 
 ```bash
-  git clone
+  git clone https://github.com/Terieyenike/appwrite-todos
 ```
 
 Go to the project directory
 
 ```bash
-  cd
+  cd appwrite-todos
 ```
 
 Install dependencies
