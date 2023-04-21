@@ -28,10 +28,7 @@
 
     <div :style="{ 'margin-top': marginTop + 'em' }">
       <ul class="list">
-        <li
-          class="list-item u-flex u-main-space-between u-cross-center"
-          v-for="item in todos"
-          :key="item.$id">
+        <li class="list-item" v-for="item in todos" :key="item.$id">
           <list-todo :item="item" />
         </li>
       </ul>
@@ -45,7 +42,6 @@ import { getTodo, create } from "~/utils";
 const name = ref("Add tooodooos");
 
 const marginTop = ref("3");
-// const space = ref(1);
 
 const todos = ref(null);
 
@@ -65,7 +61,7 @@ const handleInputChange = () => {
       window.location.reload();
     },
     function (error) {
-      console.log(error); // Failure
+      console.log(error);
     }
   );
 };
