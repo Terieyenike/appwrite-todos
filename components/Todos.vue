@@ -73,7 +73,6 @@ onMounted(() => {
   getTodo.then(
     function (response) {
       todos.value = response.documents;
-      console.log(todos.value);
     },
     function (error) {
       console.log(error);
