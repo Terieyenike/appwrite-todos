@@ -40,7 +40,30 @@
 </template>
 
 <script setup>
-import { getTodo, create } from "~/utils";
+// import { create } from "~/utils";
+import { Client, Databases, ID } from "appwrite";
+
+const runtimeConfig = useRuntimeConfig();
+
+const client = new Client();
+const databases = new Databases(client);
+
+client
+  .setEndpoint(runtimeConfig.public.API_ENDPOINT)
+  .setProject(runtimeConfig.public.PROJECT_ID);
+
+const getTodo = databases.listDocuments(
+  runtimeConfig.public.DATABASE_ID,
+  runtimeConfig.public.COLLECTION_ID
+);
+
+const create = (data) =>
+  databases.createDocument(
+    runtimeConfig.public.DATABASE_ID,
+    runtimeConfig.public.COLLECTION_ID,
+    ID.unique(),
+    data
+  );
 
 const name = ref("Add tooodooos");
 
@@ -73,7 +96,6 @@ onMounted(() => {
   getTodo.then(
     function (response) {
       todos.value = response.documents;
-      console.log(todos.value);
     },
     function (error) {
       console.log(error);

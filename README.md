@@ -54,10 +54,6 @@ To run this project, you will need to add the following environment variables to
 
 Reference the [.env.local](.env.local)
 
-## Deployment
-
-- [Vercel](https://vercel.com/)
-
 ## Authors
 
 - [@terieyenike](https://www.twitter.com/terieyenike)
