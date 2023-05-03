@@ -12,7 +12,7 @@
 import { Client, Databases } from "appwrite";
 
 const props = defineProps({
-  item: String,
+  item: Object,
 });
 
 const runtimeConfig = useRuntimeConfig();
