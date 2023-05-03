@@ -37,7 +37,6 @@
 </template>
 
 <script setup>
-// import { create } from "~/utils";
 import { Client, Databases, ID } from "appwrite";
 
 const runtimeConfig = useRuntimeConfig();
