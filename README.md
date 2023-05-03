@@ -1,42 +1,59 @@
-# Nuxt 3 Minimal Starter
+# Appwrite CRUD app
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Built this project with Appwrite databases functions, Appwrite Cloud, and Appwrite Pink Design System.
 
-## Setup
+Try [Appwrite](https://appwrite.io/) today!
 
-Make sure to install the dependencies:
+This application enable the users to create and delete the created todos from the list of items.
 
-```bash
-# yarn
-yarn install
+## Demo
 
-# npm
-npm install
+![todos app](https://user-images.githubusercontent.com/25850598/233693837-588bdcd6-b607-4aec-8c72-0709d5f9ed11.gif)
 
-# pnpm
-pnpm install
-```
+Try the demo [live](#)
 
-## Development Server
+## Tech Stack
 
-Start the development server on `http://localhost:3000`
+**Client:** Nuxt, Appwrite Pink Design
 
-```bash
-npm run dev
-```
+**Server:** Appwrite, Appwrite Cloud
 
-## Production
+## Want to create a Cloud Appwrite instance
 
-Build the application for production:
+[Appwrite Cloud](https://cloud.appwrite.io/)
+
+## Run Locally
+
+Clone the project
 
 ```bash
-npm run build
+  git clone https://github.com/Terieyenike/appwrite-todos
 ```
 
-Locally preview production build:
+Go to the project directory
 
 ```bash
-npm run preview
+  cd appwrite-todos
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Install dependencies
+
+```bash
+  yarn install
+```
+
+Start the server
+
+```bash
+  yarn dev
+```
+
+## Environment variables
+
+To run this project, you will need to add the following environment variables to your `.env` file
+
+Reference the [.env.local](.env.local)
+
+## Authors
+
+- [@terieyenike](https://www.twitter.com/terieyenike)
