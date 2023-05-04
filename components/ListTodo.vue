@@ -1,11 +1,11 @@
 <template>
   <div class="u-flex u-main-space-between u-cross-center u-width-full-line">
     <span class="text">{{ item.todo }}</span>
-    <div>
+    <div class="u-cursor-pointer">
       <span
         class="icon-pencil"
         aria-hidden="true"
-        @click.prevent="closeTodo"
+        @click.prevent="showModal = !showModal"
         :style="{ 'margin-right': space + 'em' }"></span>
       <span
         class="icon-trash"
@@ -35,7 +35,7 @@
             <input
               class="input-text"
               type="text"
-              v-model="todo"
+              v-model="item.todo"
               :placeholder="item.todo" />
           </div>
         </li>
@@ -44,10 +44,10 @@
         <span class="text">Update todo</span>
       </button>
     </form>
-    <div>
+    <div class="u-cursor-pointer">
       <span
         class="icon-x u-font-size-32"
-        @click.prevent="closeTodo"
+        @click.prevent="showModal = !showModal"
         aria-hidden="true"
         :style="{
           position: 'absolute',
@@ -63,17 +63,52 @@
 import { Client, Databases } from "appwrite";
 
 const props = defineProps({
-  item: String,
+  item: Object,
 });
 
 const space = ref("1");
 const showModal = ref(false);
-const todo = ref("");
+// const todo = ref("");
 
 const runtimeConfig = useRuntimeConfig();
+
 const client = new Client();
 const databases = new Databases(client);
 client
   .setEndpoint(runtimeConfig.public.API_ENDPOINT)
   .setProject(runtimeConfig.public.PROJECT_ID);
+
+const updateTodo = (database_id, collection_id, document_id, data) =>
+  databases.updateDocument(database_id, collection_id, document_id, data);
+
+const handleUpdateTodo = () => {
+  updateTodo(props.item.$databaseId, props.item.$collectionId, props.item.$id, {
+    todo: props.item.todo,
+  }).then(
+    function (response) {
+      console.log(`${props.item.todo} successfully updated in DB`);
+    },
+    function (error) {
+      console.log("Error updating the document", error.message);
+    }
+  );
+};
+
+const deleteTodo = (database_id, collection_id, document_id) =>
+  databases.deleteDocument(database_id, collection_id, document_id);
+
+const handleDeleteTodo = () => {
+  deleteTodo(
+    props.item.$databaseId,
+    props.item.$collectionId,
+    props.item.$id
+  ).then(
+    function (response) {
+      window.location.reload();
+    },
+    function (error) {
+      console.log(error);
+    }
+  );
+};
 </script>
