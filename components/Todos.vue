@@ -28,10 +28,7 @@
 
     <div :style="{ 'margin-top': marginTop + 'em' }">
       <ul class="list">
-        <li
-          class="list-item u-flex u-main-space-between u-cross-center"
-          v-for="item in todos"
-          :key="item.$id">
+        <li class="list-item" v-for="item in todos" :key="item.$id">
           <list-todo :item="item" />
         </li>
       </ul>
