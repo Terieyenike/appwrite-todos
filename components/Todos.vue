@@ -40,7 +40,6 @@
 </template>
 
 <script setup>
-// import { create } from "~/utils";
 import { Client, Databases, ID } from "appwrite";
 
 const runtimeConfig = useRuntimeConfig();
@@ -83,11 +82,10 @@ const handleInputChange = () => {
     todo: input.todo,
   }).then(
     function (response) {
-      console.log("item successfully added to db");
       window.location.reload();
     },
     function (error) {
-      console.log(error); // Failure
+      console.log(error);
     }
   );
 };
