@@ -16,7 +16,7 @@
             <input
               class="input-text"
               type="text"
-              placeholder="add new todo"
+              :placeholder="inputError ? 'please enter a todo' : 'add new todo'"
               v-model="input.todo" />
           </div>
         </li>
@@ -71,9 +71,11 @@ const input = reactive({
   todo: "",
 });
 
+const inputError = ref(false);
+
 const handleInputChange = () => {
   if (!input.todo) {
-    return;
+    return (inputError.value = true);
   }
   create({
     todo: input.todo,

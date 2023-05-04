@@ -68,7 +68,6 @@ const props = defineProps({
 
 const space = ref("1");
 const showModal = ref(false);
-// const todo = ref("");
 
 const runtimeConfig = useRuntimeConfig();
 
@@ -82,6 +81,9 @@ const updateTodo = (database_id, collection_id, document_id, data) =>
   databases.updateDocument(database_id, collection_id, document_id, data);
 
 const handleUpdateTodo = () => {
+  if (props.item.todo) {
+    return;
+  }
   updateTodo(props.item.$databaseId, props.item.$collectionId, props.item.$id, {
     todo: props.item.todo,
   }).then(
