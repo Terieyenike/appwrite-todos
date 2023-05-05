@@ -13,6 +13,7 @@
         @click.prevent="handleDeleteTodo"></span>
     </div>
   </div>
+
   <div
     v-if="showModal"
     class="u-z-index-20 u-padding-24"
@@ -32,11 +33,7 @@
         <li class="form-item">
           <label class="label" :style="{ color: 'white' }">Edit todo</label>
           <div class="input-text-wrapper">
-            <input
-              class="input-text"
-              type="text"
-              v-model="item.todo"
-              :placeholder="item.todo" />
+            <input class="input-text" type="text" v-model="item.todo" />
           </div>
         </li>
       </ul>
@@ -81,9 +78,6 @@ const updateTodo = (database_id, collection_id, document_id, data) =>
   databases.updateDocument(database_id, collection_id, document_id, data);
 
 const handleUpdateTodo = () => {
-  if (props.item.todo) {
-    return;
-  }
   updateTodo(props.item.$databaseId, props.item.$collectionId, props.item.$id, {
     todo: props.item.todo,
   }).then(
