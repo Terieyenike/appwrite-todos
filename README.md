@@ -8,7 +8,7 @@ This application enable the users to create and delete the created todos from th
 
 ## Demo
 
-![todos app](https://user-images.githubusercontent.com/25850598/233693837-588bdcd6-b607-4aec-8c72-0709d5f9ed11.gif)
+![todos app](https://user-images.githubusercontent.com/25850598/236688616-cd4f4fa2-16aa-4983-84fd-01122819e0f9.gif)
 
 Try the demo [live](#)
 
