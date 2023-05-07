@@ -18,7 +18,7 @@ Try the demo [live](#)
 
 **Server:** Appwrite, Appwrite Cloud
 
-## Want to create a Cloud Appwrite instance
+## Want to create a Cloud Appwrite instance?
 
 [Appwrite Cloud](https://cloud.appwrite.io/)
 
