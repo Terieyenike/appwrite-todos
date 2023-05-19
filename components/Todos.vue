@@ -27,11 +27,16 @@
     </form>
 
     <div :style="{ 'margin-top': marginTop + 'em' }">
-      <ul class="list">
-        <li class="list-item" v-for="item in todos" :key="item.$id">
-          <list-todo :item="item" />
-        </li>
-      </ul>
+      <div v-if="todos.length > 0">
+        <ul class="list">
+          <li class="list-item" v-for="item in todos" :key="item.$id">
+            <list-todo :item="item" />
+          </li>
+        </ul>
+      </div>
+      <div v-else>
+        <p class="text u-bold">No item in the database</p>
+      </div>
     </div>
   </div>
 </template>
@@ -65,7 +70,7 @@ const name = ref("Add tooodooos");
 
 const marginTop = ref("3");
 
-const todos = ref(null);
+const todos = ref([]);
 
 const input = reactive({
   todo: "",
